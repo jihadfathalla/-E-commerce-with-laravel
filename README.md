@@ -6,25 +6,25 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
-#About Project
+##About Project
 This Project is a simple and basic E-commerce using laravel
 
-#Packages Used
+##Packages Used
 -laravel/ui
 -spatie/laravel-permission
 
-#Tech/framework used
-#Built with
+##Tech/framework used
+##Built with
 Laravel
 
-#Features
+##Features
 For Customer:
 Customer can add & drop products from shopping cart.. After Registeration Customer must verify his mail to ba able to add products
 
 For Admin:
 Admin has all CRUD on Products and Customers and categories and brands.
 
-#Installation
+##Installation
 Please check the official laravel installation guide for server requirements before you start. Official Documentation
 Clone the repository git clone https://github.com/jihadfathalla/-E-commerce-with-laravel
 
@@ -35,7 +35,7 @@ Run the database migrations and seed (Set the database credentials in .env befor
 Start the local development server php artisan serve
 You can now access the server at http://localhost:8000
 
-Command List
+##Command List
 git clone https://github.com/jihadfathalla/-E-commerce-with-laravel
 cd .env.example .env
 composer install
