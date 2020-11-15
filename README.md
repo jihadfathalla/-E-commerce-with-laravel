@@ -44,3 +44,9 @@ cd .env.example .env
 php artisan key:generate
 php artisan migrate:fresh --seed
 php artisan serve
+
+## website on Herku 
+http://obscure-coast-33841.herokuapp.com/
+note: the Verify Mail and Mail Confirmation will not work on website becouse Herku don't support SMTP library.
+
+
