@@ -24,37 +24,25 @@
           </ul>
       </div>
   @endif
-    <form method="POST" action="{{route('users.store')}}">
+  
+    <form method="POST" action="{{route('user.store')}}">
         @csrf
         <h1 style="color:#3cb371"><strong>Create New User</strong></h1>
         <div class="form-group ">
             <label >Name</label>
             <input name="name" type="text"  class="form-control">
         </div>
-
         <div class="form-group mt-5">
             <label >Email</label>
             <input name="email" type="text"  class="form-control">
         </div>
 
-       
-
-        <div class="form-group mt-5">
-            <label >Role</label>
-            <select  class="form-control"  name="role">
-            @foreach ($roles as $key => $value)
-               <option value="{{ $value}}">{{$value}}</option>
-            @endforeach
-            </select>
-            </div>
         <div class="justify-content-end">
            <input type="submit" value="Create" class="btn btn-success">
            </div>
 
-
-        </div>
-
     </form>
+    
      
 </div>
 

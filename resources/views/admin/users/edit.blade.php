@@ -13,10 +13,9 @@
   @include('admin.layouts.sidebar')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-  <div class="container">
-  <div class="p-3" style="text-align:center">
-  <h1 style="color:#3cb371"><strong>{{$user->name}}</strong></h1>
-  @if ($errors->any())
+<div class="container">
+<div class="p-3" style="text-align:center">
+@if ($errors->any())
       <div class="alert alert-danger">
           <ul>
               @foreach ($errors->all() as $error)
@@ -25,58 +24,39 @@
           </ul>
       </div>
   @endif
+  
+        <form method="POST" action="{{route('user.update',$user->id)}}" class="mb-4" >
+        @csrf 
+            @method('POST')
+            <div style="text-align:center">
+                    <h1 style="color:#E44D3A; font-size:50px;"><strong>Edit User</strong></h1> 
+                </div>     
 
-    <form method="POST" action="{{route('users.update',$user->id)}}" class="mb-4">
-        @csrf
-        @method('PUT')
-        <h1 class="mt-5 text-center">Edit {{$user->name}}</h1>
         <div class="form-group mt-5">
-            <label >Name</label>
+            <label style="color: #E44E3A"><strong>Name</strong></label>
             <input name="name" type="text"  class="form-control" value="{{$user->name}}">
         </div>
 
         <div class="form-group mt-5">
-            <label >Email</label>
+            <label style="color: #E44E3A"><strong>Email</strong></label>
             <input name="email" type="text"  class="form-control" value="{{$user->email}}">
         </div>
-      
 
-        <div class="form-group mt-5">
-            <label >Role</label>
-            <select  class="form-control"  name="role">
-            @foreach ($roles as $key => $value)
-            @if ($user->hasRole($value))
-               <option value="{{ $value}}" selected>{{$value}}</option>
-               @else
-               <option value="{{ $value}}">{{$value}}</option>
-            @endif   
-            @endforeach
-            </select>
-            </div>
 
-            <div class="form-group mt-5">
-   <h6 style="color: #E44E3A"><strong>Profile Image</strong></h6>
-  <div class="custom-file ">
-  <input type="file"  id="customFileLangHTML" value="{{$user->avatar}}"  name="avatar">
-  <label class="custom-file-label" for="customFileLangHTML" data-browse="Bestand kiezen">Upload Image</label>
-</div>
-</div>
-       
-        <div class="justify-content-end">
+        
+        <div class="justify-content-end mt-5">
            <input type="submit" value="Submit" class="btn btn-success">
            </div>
-
-
-        </div>
-
     </form>
-     
+
+    <div class="pull-right m-3">
+                <a class="btn btn-primary" href="{{route('user.index')}}">Back</a>
+            </div>
+      </div>
+
 </div>
-
-  </div>
-  <!-- /.content-wrapper -->
-  @include('admin.layouts.footer')
-
-
-
-
+</div>
+</div>
+<!-- /.content-wrapper -->
+@include('admin.layouts.footer')
+  

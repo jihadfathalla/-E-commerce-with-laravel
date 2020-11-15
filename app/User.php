@@ -6,6 +6,9 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Product;
+use App\ChoppingCart;
+
 
 
 class User extends Authenticatable
@@ -38,4 +41,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function products()
+    {
+       // return $this->belongsToMany(Product::class, 'shopping_cart');
+        return $this->belongsToMany('App\Product');
+
+    }
 }

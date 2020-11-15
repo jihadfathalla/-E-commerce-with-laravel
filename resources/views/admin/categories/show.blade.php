@@ -1,34 +1,44 @@
 @include('admin.layouts.header')
 
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+    <div class="wrapper">
 
-  @include('admin.layouts.navbar')
- 
-  @include('admin.layouts.sidebar')
-  
-  <div class="content-wrapper">
-  <div class="container">
-  <div class="p-3" style="text-align:center">
-    <h1 style="color:#3cb371"><strong>Categorie</strong></h1>
+        <!-- Navbar -->
+        @include('admin.layouts.navbar')
+        <!-- /.navbar -->
 
-    <div class="row">
-    @foreach($profs as $prof) 
-        <div class="col-3">
-            <div class="card ">
-                <div class="card-header text-center bg-success text-light">
-                    Professional Data
-                </div>
-                <div class="card-body">
-                    <h5 class="card-photo">Prof photo</h5>
-                    <p class="card-text"><b>Name:</b> </p>
-                </div>
-            </div>
+        <!-- Main Sidebar Container -->
+
+        @include('admin.layouts.sidebar')
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+        <div class="container">
+        <div class="p-3" style="text-align:center">
+        <h1 style="color:#3cb371"><strong>categories</strong></h1>
+        <div class="p-2">
+       <a href=""><button type="button"
+        class="btn btn-success float-left">Create Category</button></a>
         </div>
-        @endforeach
-    </div>
-</div>      
-</div>
-  @include('admin.layouts.footer')
+        
+        
+    
+    <table id="example" class="table table-striped table-bordered" style="width:80rem%">
+    <thead>
+      <tr>
+       <th>ID</th>
+       <th>Name</th>
+     </tr>
+     </thead>
+    <tbody>
+    <th>{{$category->id}}</th>
+    <td>{{$category->name}}</td> 
+       </tbody>
+         </table>
+                        
+        </div>
+          </div>
+          </div>
+    <!-- /.content-wrapper -->
+    @include('admin.layouts.footer')
 
 

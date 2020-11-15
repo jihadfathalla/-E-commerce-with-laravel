@@ -1,65 +1,71 @@
 @include('admin.layouts.header')
 
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+    <div class="wrapper">
 
-  <!-- Navbar -->
-  @include('admin.layouts.navbar')
-  <!-- /.navbar -->
+        <!-- Navbar -->
+        @include('admin.layouts.navbar')
+        <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
- 
-  @include('admin.layouts.sidebar')
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-  <div class="container">
-  <div class="p-3" style="text-align:center">
-    <h1 style="color:#3cb371"><strong>Categories</strong></h1>
-    <div class="p-2">
-       <a href="{{route('categories.create')}}"><button type="button"
-        class="btn btn-success float-left">Create Categorie</button></a>
+        <!-- Main Sidebar Container -->
+
+        @include('admin.layouts.sidebar')
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+        <div class="container">
+        <div class="p-3" style="text-align:center">
+        <h1 style="color:#3cb371"><strong>categories</strong></h1>
+        <div class="p-2">
+       <a href="{{route('category.create')}}"><button type="button"
+        class="btn btn-success float-left">Create Category</button></a>
         </div>
         
-
-
+        
+    
     <table id="example" class="table table-striped table-bordered" style="width:80rem%">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>created At</th> 
-          <th>Created By</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
+    <thead>
+      <tr>
+       <th>ID</th>
+       <th>Name</th>
+       <th>Action</th>
+     </tr>
+     </thead>
     <tbody>
     @foreach ($categories as $category)
-      <tr>
-        <th>{{$category->id}}</th>
-        <td>{{$category->name}}</td>
-        <td>{{$category->created_at ? $category->created_at->format('d-m-Y') : ''}}</td>  
-        <td>Admin: {{$user->name}}</td>
-      
-          <td> 
-              <a href="{{route('categories.edit',['category' => $category->id])}}"
-               class="btn btn-primary float-center mr-2">Edit</a>
-               <a href="{{route('categories.show',['category' => $category->id])}}"
-               class="btn btn-info float-left mr-2">Show</a>
-              <form method="POST" action="{{route('categories.destroy',['category' => $category->id])}}"
-              class="float-right">
-                @csrf  
-                @method('DELETE')
-                <button class="btn btn-danger mr-2" onclick="return confirm ('are you sure?')">Delete</button>
-              </form>
-          </td>
-      </tr>
-      @endforeach
+    <tr>
+    <th>{{$category->id}}</th>
+    <td>{{$category->name}}</td> 
+   <td>
+    <a href="{{route('category.show', $category->id)}}"><button type="button"
+    class="btn btn-info float-left  mr-2">Show</button></a>
+    
+                                            
+    <a href="{{route('category.edit', $category->id)}}"><button type="button"
+    class="btn btn-primary float-left  mr-2 ">Edit</button></a>
+
+    <form action="{{route('category.destroy', $category->id) }}" method="POST"
+    class="float-left mr-2"> 
+    @csrf
+    {{ method_field('DELETE') }}
+    <button type="submit" class="btn btn-danger float-left   mr-2" onclick="return confirm ('are you sure?')">Delete</button>
+    </form>
+       
+    </td>
+    </tr>
+    
+    @endforeach
+
     </tbody>
-  </table>
-  </div>
-  </div>
-    <!-- /.content-wrapper -->
-    @include('admin.layouts.footer')
+         </table>
+  
+          
+</div>
+
+</div>
+</div>
+</div>
+<!-- /.content-wrapper -->
+@include('admin.layouts.footer')
 
 
 

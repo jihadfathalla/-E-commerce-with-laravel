@@ -17,7 +17,7 @@
   <div class="p-3" style="text-align:center">
   </div>
   <div class="mx-auto text-center ">
-       <img class="mx-auto" style="width: 500px;" src="/design/AdminLTE/dist/img/circle-cropped (1).png">
+       <img class="mx-auto" style="width: 500px;" src="/design/AdminLTE/dist/img/circle-cropped.png">
     </div>
 @yield('content')
   </div>

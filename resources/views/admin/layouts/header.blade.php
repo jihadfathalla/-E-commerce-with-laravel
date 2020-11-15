@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Techvisor</title>
+  <title>E-commerce</title>
   <link href="{{ asset('design/style/images/t-icon.png') }}" rel="shortcut icon" type="image/png">
 
   <!-- Tell the browser to be responsive to screen width -->

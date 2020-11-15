@@ -1,9 +1,9 @@
 <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link" style="background-color:#20c997">
-      <img src="{{ asset('design/AdminLTE/dist/img/images.jpeg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="{{ asset('design/AdminLTE/dist/img/circle-cropped.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Techvisor</span>
+      <span class="brand-text font-weight-light">E-commerce</span>
     </a>
 
     <!-- Sidebar -->
@@ -11,10 +11,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('design/AdminLTE/dist/img/avatar5.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
-          <h5 style="color:#3cb371"><strong>{{ Auth::user()->name }}</strong></h5>
+        <div class="info"> 
+          <h5 style="color:#3cb371"><strong>Admin</strong></h5>
         </div>
       </div>
 
@@ -33,29 +33,24 @@
             </a>
             <ul class="nav nav-treeview">
 
-            <li class="nav-item">
-                <a href="{{route('users.adminIndex')}}" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Admins</p>
-                </a>
-              </li> 
+          
 
               <li class="nav-item">
-                <a href="{{route('professionals.index')}}" class="nav-link active">
+                <a href="{{route('user.index')}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Professionals</p>
+                  <p>Customers</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a  href="{{route('users.index')}}" class="nav-link active">
+                <a  href="{{route('product.index')}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Users</p>
+                  <p>Products</p>
                 </a>
               </li>
              
               <li class="nav-item">
-                <a href="{{route('categories.index')}}" class="nav-link active">
+                <a href="" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categories</p>
                 </a>
@@ -63,9 +58,9 @@
             
 
           <li class="nav-item">
-                <a href="{{route('questions.index')}}" class="nav-link active">
+                <a href="" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Questions</p>
+                  <p>Brands</p>
                 </a>
               </li>
             </ul>
@@ -82,56 +77,40 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('users.create')}}" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create User</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('categories.create')}}" class="nav-link">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Product</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create Categorie</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="{{route('questions.create')}}"  class="nav-link">
+                <a href=""  class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Create Question</p>
+                  <p>Create Brand</p>
                 </a>
               </li>
             </ul>
           </li>
 
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{route('home')}}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
-              <p>
-                Pages
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              
-              <li class="nav-item">
-                <a href="{{route('adminHome')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>
-              </li>
-            </ul>
-          </li>
-
-          
-             
-              
-              
-          <li class="nav-item">
-            <a href="{{route('allUsers.index')}}"  class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
-              <p>Documentation</p>
-            </a>
-          </li>
+                </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -25,18 +25,40 @@
       </div>
   @endif
   
-    <form method="POST" action="{{route('category.store')}}">
+    <form method="POST" action="{{route('product.store')}}">
         @csrf
-        <h1 style="color:#3cb371"><strong>Create New category</strong></h1>
+        <h1 style="color:#3cb371"><strong>Create New Product</strong></h1>
         <div class="form-group ">
             <label >Name</label>
             <input name="name" type="text"  class="form-control">
         </div>
+        <div class="form-group ">
+            <label >SKE</label>
+            <input name="ske" type="text"  class="form-control">
+        </div>
+
+        <div class="form-group mt-5">
+   <h6 ><strong>Product Image</strong></h6>
+  <div class="custom-file ">
+  <input type="file"  id="customFileLangHTML"   name="image">
+  <label class="custom-file-label" for="customFileLangHTML" data-browse="Bestand kiezen">Upload Image</label>
+</div>
+</div>
+
         <div class="form-group mt-5">
             <label >Brand</label>
             <select  class="form-control"  name="brand_id">
             @foreach ($brands as $brand)
                <option value="{{$brand->id}}">{{$brand->name}}</option>
+            @endforeach
+            </select>
+            </div>
+
+            <div class="form-group mt-5">
+            <label >Categories</label>
+            <select  class="form-control"  name="brand_id">
+            @foreach ($categories as $category)
+               <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
             </select>
             </div>
