@@ -36,15 +36,10 @@
         <a href="{{route('product.index')}}"  class="nav-link">Products<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{{route('category.index')}}">Categories<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="{{route('category.index')}}">Brands<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{route('shopping_cart')}}">Shopping Cart<span class="sr-only">(current)</span></a>
       </li>
 
-      <li class="nav-item active">
-        <a class="nav-link" href="{{route('shopping.index')}}">Shopping Cart<span class="sr-only">(current)</span></a>
-      </li>
+    
      
       @endauth
 
@@ -89,9 +84,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                    <a class="dropdown-item" href="">
-                                   Profile
-                                    </a>
+                                    
                                 </div>
                                
                             </li>

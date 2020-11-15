@@ -16,20 +16,18 @@
                 <h5>Click To Add To Your Shopping Cart</h5></br>
             </div>
             
-            <div class="main-section">
-                <div class="container">
-                    <div class="main-section-data">
-                        <div class="container col-6 p-3">
-                            @foreach ($products as $product)
-                                @if (in_array($product->id , $cats )) 
-                                    <a href="{{route('detach', $cat->id)}}">
-                                    <button type="button"  class="btn btn-dark btn-lg btn-block" >{{$cat->name}}</button></a></br>
-                                @else  
-                                    <a href="{{route('attach', $cat->id)}}">
-                                    <button type="button"  class="btn btn-info btn-lg btn-block" >{{$cat->name}}</button></a></br>
-                                @endif 
-                            @endforeach 
-                        </div>
+           
+            
+                    <div class="card mr-3" style="width: 15rem;">
+                    <div class="card-header text-center">
+                    Product Photo
+                    </div>
+                    <div class="card-body">
+                        <h5>Name: {{$product->name}}</h5>
+                        <p class="card-text">SKE: {{$product->ske}}</p>
+                    </div>
+                </div>        
+                     </div>
                     </div>
                 </div>   
             </div>

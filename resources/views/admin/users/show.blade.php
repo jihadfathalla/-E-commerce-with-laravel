@@ -14,7 +14,7 @@
         <div class="content-wrapper">
         <div class="container">
         <div class="p-3" style="text-align:center">
-        <h1 style="color:#3cb371"><strong>users</strong></h1>
+        <h1 style="color:#3cb371"><strong>Customers</strong></h1>
         <div class="p-2">
        <a href="{{route('user.create')}}"><button type="button"
         class="btn btn-success float-left">Create User</button></a>

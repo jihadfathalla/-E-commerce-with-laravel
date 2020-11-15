@@ -18,7 +18,12 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes(['verify' => true]);
+
+
 
 
 //================== categories ======================
@@ -43,10 +48,12 @@ Route::GET('/products/{product}/edit','ProductController@edit')->name('product.e
 Route::post('/products/{product}/','ProductController@update')->name('product.update')->middleware(['role:super-admin']);
 Route::DELETE('/products/{product}/delete','ProductController@destroy')->name('product.destroy')->middleware(['role:super-admin']);
 });
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth']], function () {
 Route::get('/products', 'ProductController@index')->name('product.index');
 Route::get('/products/{product}', 'ProductController@show')->name('product.show');
-Route::get('/shopping_cart', 'ProductController@shopping_cart')->name('shopping.index');
+Route::get('/attach/{product}', 'ProductController@attach')->name('attach');
+Route::get('/detach/{product}', 'ProductController@detach')->name('detach');
+Route::get('/shopping_cart', 'ProductController@shopping_cart')->name('shopping_cart');
 });
 
 
@@ -57,11 +64,10 @@ Route::get('/users/create', 'UserController@create')->name('user.create');
 Route::post('/users', 'UserController@store')->name('user.store');
 Route::DELETE('/users/{user}/delete','UserController@destroy')->name('user.destroy');
 });
-Route::group(['middleware' => 'auth'], function () {
-Route::get('/users/{user}', 'UserController@show')->name('user.show');
+Route::get('/users/{user}', 'UserController@show')->name('user.show')->middleware('auth');
 Route::GET('/users/{user}/edit','UserController@edit')->name('user.edit');
-Route::post('/users/{user}/','UserController@update')->name('user.update');
-});
+Route::post('/users/{user}/','UserController@update')->name('user.update')->middleware(['auth']);
+
 
 
 

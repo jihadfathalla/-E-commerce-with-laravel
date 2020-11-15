@@ -23,8 +23,8 @@ class Product extends Model
     }
     public function user()
     {
-      //  return $this->belongsToMany(User::class, 'shopping_cart');
-        return $this->belongsToMany('App\User');
+       return $this->belongsToMany(User::class, 'shopping_carts');
+        //return $this->belongsToMany('App\User');
 
     }
 }

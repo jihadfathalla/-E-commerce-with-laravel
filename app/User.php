@@ -6,12 +6,15 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
 use App\Product;
 use App\ChoppingCart;
 
 
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements MustVerifyEmail
+
 {
     use Notifiable, HasRoles;
 
@@ -44,8 +47,7 @@ class User extends Authenticatable
 
     public function products()
     {
-       // return $this->belongsToMany(Product::class, 'shopping_cart');
-        return $this->belongsToMany('App\Product');
+        return $this->belongsToMany(Product::class, 'shopping_carts');
 
     }
 }

@@ -29,7 +29,7 @@
         @csrf 
             @method('POST')
             <div style="text-align:center">
-                    <h1 style="color:#E44D3A; font-size:50px;"><strong>Edit User</strong></h1> 
+                    <h1 style="color:#E44D3A; font-size:50px;"><strong>Edit Customer</strong></h1> 
                 </div>     
 
         <div class="form-group mt-5">

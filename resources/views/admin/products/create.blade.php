@@ -32,16 +32,12 @@
             <label >Name</label>
             <input name="name" type="text"  class="form-control">
         </div>
-        <div class="form-group ">
-            <label >SKE</label>
-            <input name="ske" type="text"  class="form-control">
-        </div>
+        
 
         <div class="form-group mt-5">
    <h6 ><strong>Product Image</strong></h6>
   <div class="custom-file ">
-  <input type="file"  id="customFileLangHTML"   name="image">
-  <label class="custom-file-label" for="customFileLangHTML" data-browse="Bestand kiezen">Upload Image</label>
+  <input type="file"  class="form-control"  name="image">
 </div>
 </div>
 

@@ -27,7 +27,7 @@
   
     <form method="POST" action="{{route('user.store')}}">
         @csrf
-        <h1 style="color:#3cb371"><strong>Create New User</strong></h1>
+        <h1 style="color:#3cb371"><strong>Create New Customer</strong></h1>
         <div class="form-group ">
             <label >Name</label>
             <input name="name" type="text"  class="form-control">

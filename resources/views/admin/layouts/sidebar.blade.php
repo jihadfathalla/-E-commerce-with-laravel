@@ -50,21 +50,14 @@
               </li>
              
               <li class="nav-item">
-                <a href="" class="nav-link active">
+                <a href="{{route('category.index')}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categories</p>
                 </a>
               </li>
             
 
-          <li class="nav-item">
-                <a href="" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Brands</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+         
 
 
           <li class="nav-item has-treeview">
@@ -77,31 +70,26 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('user.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create User</p>
                 </a>
-              </li>
+              </li> 
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('product.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create Product</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('category.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create Categorie</p>
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a href=""  class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create Brand</p>
-                </a>
-              </li>
+             
             </ul>
           </li>
 
