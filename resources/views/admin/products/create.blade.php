@@ -25,7 +25,7 @@
       </div>
   @endif
   
-    <form method="POST" action="{{route('product.store')}}">
+    <form method="POST" action="{{route('product.store')}}" enctype="multipart/form-data">
         @csrf
         <h1 style="color:#3cb371"><strong>Create New Product</strong></h1>
         <div class="form-group ">
