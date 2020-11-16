@@ -15,7 +15,7 @@ This Project is a simple and basic E-commerce using laravel
 -spatie/laravel-permission
 
 ## Tech/framework used
-##Built with
+# Built with
 Laravel
 
 ## Features
